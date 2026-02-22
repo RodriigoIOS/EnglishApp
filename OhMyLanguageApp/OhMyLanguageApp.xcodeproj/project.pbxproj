@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B9C9EB52F4A8108002443CC /* ChatCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C9EB42F4A8108002443CC /* ChatCoordinatorDelegate.swift */; };
+		5B9C9EB72F4A8171002443CC /* GoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C9EB62F4A8171002443CC /* GoalsViewModel.swift */; };
+		5B9C9EB92F4A83DE002443CC /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C9EB82F4A83DE002443CC /* FeedbackViewModel.swift */; };
+		5B9C9EBB2F4A846A002443CC /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C9EBA2F4A846A002443CC /* StatsViewModel.swift */; };
+		5B9C9EBD2F4A8506002443CC /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C9EBC2F4A8506002443CC /* ChatView.swift */; };
 		5BB93A7C2F494B8F00EA4482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB93A7B2F494B8F00EA4482 /* AppDelegate.swift */; };
 		5BB93A7E2F494B8F00EA4482 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB93A7D2F494B8F00EA4482 /* SceneDelegate.swift */; };
 		5BB93A802F494B8F00EA4482 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB93A7F2F494B8F00EA4482 /* ViewController.swift */; };
@@ -46,6 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B9C9EB42F4A8108002443CC /* ChatCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		5B9C9EB62F4A8171002443CC /* GoalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewModel.swift; sourceTree = "<group>"; };
+		5B9C9EB82F4A83DE002443CC /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
+		5B9C9EBA2F4A846A002443CC /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		5B9C9EBC2F4A8506002443CC /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		5BB93A782F494B8F00EA4482 /* OhMyLanguageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OhMyLanguageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB93A7B2F494B8F00EA4482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BB93A7D2F494B8F00EA4482 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +137,11 @@
 				5BB93ABC2F495A2000EA4482 /* UIFont+App.swift */,
 				5BB93ABE2F495AA400EA4482 /* AppConstants.swift */,
 				5BB93AC02F495BC400EA4482 /* ChatViewModel.swift */,
+				5B9C9EB42F4A8108002443CC /* ChatCoordinatorDelegate.swift */,
+				5B9C9EB62F4A8171002443CC /* GoalsViewModel.swift */,
+				5B9C9EB82F4A83DE002443CC /* FeedbackViewModel.swift */,
+				5B9C9EBA2F4A846A002443CC /* StatsViewModel.swift */,
+				5B9C9EBC2F4A8506002443CC /* ChatView.swift */,
 				5BB93A7F2F494B8F00EA4482 /* ViewController.swift */,
 				5BB93A872F494B9100EA4482 /* Assets.xcassets */,
 				5BB93A892F494B9100EA4482 /* LaunchScreen.storyboard */,
@@ -287,13 +302,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9C9EBD2F4A8506002443CC /* ChatView.swift in Sources */,
 				5BB93AB52F494F9C00EA4482 /* AppDIContainer.swift in Sources */,
+				5B9C9EB72F4A8171002443CC /* GoalsViewModel.swift in Sources */,
+				5B9C9EB92F4A83DE002443CC /* FeedbackViewModel.swift in Sources */,
 				5BB93ABB2F49595800EA4482 /* UIColor+Theme.swift in Sources */,
+				5B9C9EBB2F4A846A002443CC /* StatsViewModel.swift in Sources */,
 				5BB93AB12F494C7A00EA4482 /* AppCoordinator.swift in Sources */,
 				5BB93A802F494B8F00EA4482 /* ViewController.swift in Sources */,
 				5BB93ABD2F495A2000EA4482 /* UIFont+App.swift in Sources */,
 				5BB93AB32F494D3F00EA4482 /* ChatCoordinator.swift in Sources */,
 				5BB93A7C2F494B8F00EA4482 /* AppDelegate.swift in Sources */,
+				5B9C9EB52F4A8108002443CC /* ChatCoordinatorDelegate.swift in Sources */,
 				5BB93AAF2F494C0B00EA4482 /* Coordinator.swift in Sources */,
 				5BB93AC12F495BC400EA4482 /* ChatViewModel.swift in Sources */,
 				5BB93A862F494B8F00EA4482 /* OhMyLanguageApp.xcdatamodeld in Sources */,
