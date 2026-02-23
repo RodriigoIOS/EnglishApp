@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B82B8C22F4B65DA00BC91B3 /* ChatInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82B8C12F4B65DA00BC91B3 /* ChatInputView.swift */; };
+		5B82B8C42F4BC04700BC91B3 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82B8C32F4BC04700BC91B3 /* MessageCell.swift */; };
+		5B82B8C62F4BCD4B00BC91B3 /* TypingIndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82B8C52F4BCD4B00BC91B3 /* TypingIndicatorCell.swift */; };
+		5B82B8C82F4BDDBD00BC91B3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82B8C72F4BDDBD00BC91B3 /* ChatViewController.swift */; };
+		5B82B8CA2F4BF2E500BC91B3 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82B8C92F4BF2E500BC91B3 /* GoalsViewController.swift */; };
+		5B82B8CC2F4BF44A00BC91B3 /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82B8CB2F4BF44A00BC91B3 /* GoalCell.swift */; };
+		5B82B8CE2F4C046000BC91B3 /* PanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82B8CD2F4C046000BC91B3 /* PanelViewController.swift */; };
 		5B9C9EB52F4A8108002443CC /* ChatCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C9EB42F4A8108002443CC /* ChatCoordinatorDelegate.swift */; };
 		5B9C9EB72F4A8171002443CC /* GoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C9EB62F4A8171002443CC /* GoalsViewModel.swift */; };
 		5B9C9EB92F4A83DE002443CC /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C9EB82F4A83DE002443CC /* FeedbackViewModel.swift */; };
@@ -51,6 +58,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B82B8C12F4B65DA00BC91B3 /* ChatInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputView.swift; sourceTree = "<group>"; };
+		5B82B8C32F4BC04700BC91B3 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		5B82B8C52F4BCD4B00BC91B3 /* TypingIndicatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingIndicatorCell.swift; sourceTree = "<group>"; };
+		5B82B8C72F4BDDBD00BC91B3 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		5B82B8C92F4BF2E500BC91B3 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		5B82B8CB2F4BF44A00BC91B3 /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
+		5B82B8CD2F4C046000BC91B3 /* PanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
 		5B9C9EB42F4A8108002443CC /* ChatCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		5B9C9EB62F4A8171002443CC /* GoalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewModel.swift; sourceTree = "<group>"; };
 		5B9C9EB82F4A83DE002443CC /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
@@ -133,6 +147,13 @@
 				5BB93A7D2F494B8F00EA4482 /* SceneDelegate.swift */,
 				5BB93AB62F49548A00EA4482 /* ViewCodeProtocol.swift */,
 				5BB93AB82F49554F00EA4482 /* UIView+Constraints.swift */,
+				5B82B8C12F4B65DA00BC91B3 /* ChatInputView.swift */,
+				5B82B8C32F4BC04700BC91B3 /* MessageCell.swift */,
+				5B82B8C52F4BCD4B00BC91B3 /* TypingIndicatorCell.swift */,
+				5B82B8C72F4BDDBD00BC91B3 /* ChatViewController.swift */,
+				5B82B8C92F4BF2E500BC91B3 /* GoalsViewController.swift */,
+				5B82B8CD2F4C046000BC91B3 /* PanelViewController.swift */,
+				5B82B8CB2F4BF44A00BC91B3 /* GoalCell.swift */,
 				5BB93ABA2F49595800EA4482 /* UIColor+Theme.swift */,
 				5BB93ABC2F495A2000EA4482 /* UIFont+App.swift */,
 				5BB93ABE2F495AA400EA4482 /* AppConstants.swift */,
@@ -303,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B9C9EBD2F4A8506002443CC /* ChatView.swift in Sources */,
+				5B82B8C22F4B65DA00BC91B3 /* ChatInputView.swift in Sources */,
 				5BB93AB52F494F9C00EA4482 /* AppDIContainer.swift in Sources */,
 				5B9C9EB72F4A8171002443CC /* GoalsViewModel.swift in Sources */,
 				5B9C9EB92F4A83DE002443CC /* FeedbackViewModel.swift in Sources */,
@@ -312,15 +334,21 @@
 				5BB93A802F494B8F00EA4482 /* ViewController.swift in Sources */,
 				5BB93ABD2F495A2000EA4482 /* UIFont+App.swift in Sources */,
 				5BB93AB32F494D3F00EA4482 /* ChatCoordinator.swift in Sources */,
+				5B82B8CE2F4C046000BC91B3 /* PanelViewController.swift in Sources */,
 				5BB93A7C2F494B8F00EA4482 /* AppDelegate.swift in Sources */,
+				5B82B8C62F4BCD4B00BC91B3 /* TypingIndicatorCell.swift in Sources */,
+				5B82B8CC2F4BF44A00BC91B3 /* GoalCell.swift in Sources */,
 				5B9C9EB52F4A8108002443CC /* ChatCoordinatorDelegate.swift in Sources */,
 				5BB93AAF2F494C0B00EA4482 /* Coordinator.swift in Sources */,
 				5BB93AC12F495BC400EA4482 /* ChatViewModel.swift in Sources */,
+				5B82B8C82F4BDDBD00BC91B3 /* ChatViewController.swift in Sources */,
+				5B82B8CA2F4BF2E500BC91B3 /* GoalsViewController.swift in Sources */,
 				5BB93A862F494B8F00EA4482 /* OhMyLanguageApp.xcdatamodeld in Sources */,
 				5BB93AB92F49554F00EA4482 /* UIView+Constraints.swift in Sources */,
 				5BB93ABF2F495AA400EA4482 /* AppConstants.swift in Sources */,
 				5BB93AB72F49548A00EA4482 /* ViewCodeProtocol.swift in Sources */,
 				5BB93A7E2F494B8F00EA4482 /* SceneDelegate.swift in Sources */,
+				5B82B8C42F4BC04700BC91B3 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

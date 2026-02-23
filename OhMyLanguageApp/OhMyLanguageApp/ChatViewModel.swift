@@ -19,7 +19,7 @@ final class ChatViewModel {
     @Published private(set) var errorMsg: String?
     @Published private(set) var progress: UserProgress = .initial
     @Published var selectedLanguage: Language = .defaultLanguage
-    @Published var isLessionMode: Bool = false
+    @Published var isLessonMode: Bool = false
     
     // controla quais células mostram tradução
     private(set) var translatedIDs: Set<UUID> = []
@@ -55,7 +55,7 @@ final class ChatViewModel {
                     language: selectedLanguage,
                     history: messages,
                     goals: goals,
-                    lessonMode: isLessionMode
+                    lessonMode: isLessonMode
                 )
                 messages.append(tutorMsg)
                 progress = trackProgUC.updateHistory(
@@ -84,7 +84,7 @@ final class ChatViewModel {
     func changeLanguage(_ lang: Language) {
         selectedLanguage = lang
         messages = []
-        transalatedIDs = []
+        translatedIDs = []
         errorMsg = nil
         coordinatorDelegate.chatViewModelDidChangeLanguage(self, language: lang)
     }

@@ -78,4 +78,10 @@ final class ChatView: UIView, ViewCodeProtocol {
         inputBottomConstraint.constant = -(frame.height - safeAreaInsets.bottom)
         UIView.animate(withDuration: dur) { self.layoutIfNeeded() }
     }
+    
+    @objc private func KeyboardWillHide(_ n: Notification) {
+        guard let dur = n.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? Double else { return }
+        inputBottomConstraint.constant = 0
+        UIView.animate(withDuration: dur) { self.layoutIfNeeded() }
+    }
 }
