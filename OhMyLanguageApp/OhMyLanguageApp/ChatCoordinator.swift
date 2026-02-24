@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Combine
+
 
 final class ChatCoordinator: Coordinator, ChatCoordinatorDelegate {
+    
     var navigationController: UINavigationController
     private let chatVM: ChatViewModel
     private let goalsVM: GoalsViewModel
@@ -28,7 +31,7 @@ final class ChatCoordinator: Coordinator, ChatCoordinatorDelegate {
         self.chatVM.coordinatorDelegate = self
     }
     
-    func start() {
+    @MainActor func start() {
         goalsVM.loadGoals(for: chatVM.selectedLanguage)
         let vc = ChatViewController(viewModel: chatVM, goalsVM: goalsVM)
         navigationController.setViewControllers([vc], animated: false)
@@ -36,9 +39,12 @@ final class ChatCoordinator: Coordinator, ChatCoordinatorDelegate {
     
     // MARK: - ChatCoodinatorDelegate
     
-    func chatViewModel(_ vm: ChatViewModel, didReceiveFeedback feedback: TutorFeedback) {
+    @MainActor func chatViewModel(_ vm: ChatViewModel, didReceiveFeedback feedback: TutorFeedback) {
         feedbackVM.update(feedback)
         statsVM.update(vm.progress)
     }
     
+    func chatViewModelDidChangeLanguage(_ vm: ChatViewModel, language: Language) {
+        goalsVM.loadGoals(for: language)
+    }
 }

@@ -14,7 +14,6 @@
 		5B82B8CA2F4BF2E500BC91B3 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82B8C92F4BF2E500BC91B3 /* GoalsViewController.swift */; };
 		5B82B8CC2F4BF44A00BC91B3 /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82B8CB2F4BF44A00BC91B3 /* GoalCell.swift */; };
 		5B82B8CE2F4C046000BC91B3 /* PanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B82B8CD2F4C046000BC91B3 /* PanelViewController.swift */; };
-		5B9C9EB52F4A8108002443CC /* ChatCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C9EB42F4A8108002443CC /* ChatCoordinatorDelegate.swift */; };
 		5B9C9EB72F4A8171002443CC /* GoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C9EB62F4A8171002443CC /* GoalsViewModel.swift */; };
 		5B9C9EB92F4A83DE002443CC /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C9EB82F4A83DE002443CC /* FeedbackViewModel.swift */; };
 		5B9C9EBB2F4A846A002443CC /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9C9EBA2F4A846A002443CC /* StatsViewModel.swift */; };
@@ -29,6 +28,11 @@
 		5BB04FEB2F4D52FB0006AF8D /* SendMessagesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04FEA2F4D52FB0006AF8D /* SendMessagesUseCase.swift */; };
 		5BB04FED2F4D559C0006AF8D /* ManageGoalsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04FEC2F4D559C0006AF8D /* ManageGoalsUseCase.swift */; };
 		5BB04FEF2F4D578B0006AF8D /* TrackProgressUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04FEE2F4D578B0006AF8D /* TrackProgressUseCase.swift */; };
+		5BB04FF12F4D59AB0006AF8D /* MessageRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04FF02F4D59AB0006AF8D /* MessageRequestDTO.swift */; };
+		5BB04FF32F4D5A420006AF8D /* MessageResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04FF22F4D5A420006AF8D /* MessageResponseDTO.swift */; };
+		5BB04FF52F4D5AF60006AF8D /* AnthropicAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04FF42F4D5AF60006AF8D /* AnthropicAPIClient.swift */; };
+		5BB04FF72F4D5F510006AF8D /* ChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04FF62F4D5F510006AF8D /* ChatRepository.swift */; };
+		5BB04FF92F4D65410006AF8D /* GoalsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04FF82F4D65410006AF8D /* GoalsRepository.swift */; };
 		5BB93A7C2F494B8F00EA4482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB93A7B2F494B8F00EA4482 /* AppDelegate.swift */; };
 		5BB93A7E2F494B8F00EA4482 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB93A7D2F494B8F00EA4482 /* SceneDelegate.swift */; };
 		5BB93A802F494B8F00EA4482 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB93A7F2F494B8F00EA4482 /* ViewController.swift */; };
@@ -75,7 +79,6 @@
 		5B82B8C92F4BF2E500BC91B3 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		5B82B8CB2F4BF44A00BC91B3 /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 		5B82B8CD2F4C046000BC91B3 /* PanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
-		5B9C9EB42F4A8108002443CC /* ChatCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		5B9C9EB62F4A8171002443CC /* GoalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewModel.swift; sourceTree = "<group>"; };
 		5B9C9EB82F4A83DE002443CC /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		5B9C9EBA2F4A846A002443CC /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
@@ -90,6 +93,11 @@
 		5BB04FEA2F4D52FB0006AF8D /* SendMessagesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessagesUseCase.swift; sourceTree = "<group>"; };
 		5BB04FEC2F4D559C0006AF8D /* ManageGoalsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageGoalsUseCase.swift; sourceTree = "<group>"; };
 		5BB04FEE2F4D578B0006AF8D /* TrackProgressUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackProgressUseCase.swift; sourceTree = "<group>"; };
+		5BB04FF02F4D59AB0006AF8D /* MessageRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRequestDTO.swift; sourceTree = "<group>"; };
+		5BB04FF22F4D5A420006AF8D /* MessageResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponseDTO.swift; sourceTree = "<group>"; };
+		5BB04FF42F4D5AF60006AF8D /* AnthropicAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnthropicAPIClient.swift; sourceTree = "<group>"; };
+		5BB04FF62F4D5F510006AF8D /* ChatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRepository.swift; sourceTree = "<group>"; };
+		5BB04FF82F4D65410006AF8D /* GoalsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsRepository.swift; sourceTree = "<group>"; };
 		5BB93A782F494B8F00EA4482 /* OhMyLanguageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OhMyLanguageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB93A7B2F494B8F00EA4482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BB93A7D2F494B8F00EA4482 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,7 +177,12 @@
 				5BB93AB82F49554F00EA4482 /* UIView+Constraints.swift */,
 				5B82B8C12F4B65DA00BC91B3 /* ChatInputView.swift */,
 				5B82B8C32F4BC04700BC91B3 /* MessageCell.swift */,
+				5BB04FF82F4D65410006AF8D /* GoalsRepository.swift */,
+				5BB04FF62F4D5F510006AF8D /* ChatRepository.swift */,
 				5BB04FEE2F4D578B0006AF8D /* TrackProgressUseCase.swift */,
+				5BB04FF02F4D59AB0006AF8D /* MessageRequestDTO.swift */,
+				5BB04FF22F4D5A420006AF8D /* MessageResponseDTO.swift */,
+				5BB04FF42F4D5AF60006AF8D /* AnthropicAPIClient.swift */,
 				5B82B8C52F4BCD4B00BC91B3 /* TypingIndicatorCell.swift */,
 				5B82B8C72F4BDDBD00BC91B3 /* ChatViewController.swift */,
 				5B82B8C92F4BF2E500BC91B3 /* GoalsViewController.swift */,
@@ -188,7 +201,6 @@
 				5BB93ABC2F495A2000EA4482 /* UIFont+App.swift */,
 				5BB93ABE2F495AA400EA4482 /* AppConstants.swift */,
 				5BB93AC02F495BC400EA4482 /* ChatViewModel.swift */,
-				5B9C9EB42F4A8108002443CC /* ChatCoordinatorDelegate.swift */,
 				5B9C9EB62F4A8171002443CC /* GoalsViewModel.swift */,
 				5B9C9EB82F4A83DE002443CC /* FeedbackViewModel.swift */,
 				5B9C9EBA2F4A846A002443CC /* StatsViewModel.swift */,
@@ -357,6 +369,7 @@
 				5B82B8C22F4B65DA00BC91B3 /* ChatInputView.swift in Sources */,
 				5BB04FE32F4C8E210006AF8D /* Feedback.swift in Sources */,
 				5BB93AB52F494F9C00EA4482 /* AppDIContainer.swift in Sources */,
+				5BB04FF32F4D5A420006AF8D /* MessageResponseDTO.swift in Sources */,
 				5B9C9EB72F4A8171002443CC /* GoalsViewModel.swift in Sources */,
 				5B9C9EB92F4A83DE002443CC /* FeedbackViewModel.swift in Sources */,
 				5BB04FE12F4C8DA40006AF8D /* LearningGoal.swift in Sources */,
@@ -364,6 +377,7 @@
 				5BB04FEF2F4D578B0006AF8D /* TrackProgressUseCase.swift in Sources */,
 				5B9C9EBB2F4A846A002443CC /* StatsViewModel.swift in Sources */,
 				5BB04FE72F4C96870006AF8D /* ChatRepositoryProtocol.swift in Sources */,
+				5BB04FF12F4D59AB0006AF8D /* MessageRequestDTO.swift in Sources */,
 				5BB93AB12F494C7A00EA4482 /* AppCoordinator.swift in Sources */,
 				5BB93A802F494B8F00EA4482 /* ViewController.swift in Sources */,
 				5BB93ABD2F495A2000EA4482 /* UIFont+App.swift in Sources */,
@@ -371,11 +385,12 @@
 				5B82B8CE2F4C046000BC91B3 /* PanelViewController.swift in Sources */,
 				5BB93A7C2F494B8F00EA4482 /* AppDelegate.swift in Sources */,
 				5BB04FE92F4C97370006AF8D /* GoalsRepositoryProtocol.swift in Sources */,
+				5BB04FF92F4D65410006AF8D /* GoalsRepository.swift in Sources */,
 				5B82B8C62F4BCD4B00BC91B3 /* TypingIndicatorCell.swift in Sources */,
+				5BB04FF52F4D5AF60006AF8D /* AnthropicAPIClient.swift in Sources */,
 				5B82B8CC2F4BF44A00BC91B3 /* GoalCell.swift in Sources */,
 				5BB04FEB2F4D52FB0006AF8D /* SendMessagesUseCase.swift in Sources */,
 				5BB04FE52F4C93820006AF8D /* UserProgress.swift in Sources */,
-				5B9C9EB52F4A8108002443CC /* ChatCoordinatorDelegate.swift in Sources */,
 				5BB93AAF2F494C0B00EA4482 /* Coordinator.swift in Sources */,
 				5BB04FDF2F4C86910006AF8D /* Language.swift in Sources */,
 				5BB93AC12F495BC400EA4482 /* ChatViewModel.swift in Sources */,
@@ -389,6 +404,7 @@
 				5BB93AB72F49548A00EA4482 /* ViewCodeProtocol.swift in Sources */,
 				5BB93A7E2F494B8F00EA4482 /* SceneDelegate.swift in Sources */,
 				5B82B8C42F4BC04700BC91B3 /* MessageCell.swift in Sources */,
+				5BB04FF72F4D5F510006AF8D /* ChatRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
