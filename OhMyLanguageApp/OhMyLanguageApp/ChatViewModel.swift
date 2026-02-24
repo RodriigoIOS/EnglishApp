@@ -89,3 +89,8 @@ final class ChatViewModel {
         coordinatorDelegate.chatViewModelDidChangeLanguage(self, language: lang)
     }
 }
+
+protocol ChatCoordinatorDelegate: AnyObject {
+    func chatViewModel(_ vm: ChatViewModel, didReceiveFeedback: TutorFeedback)
+    func chatViewModelDidChangeLanguage(_ vm: ChatViewModel, language: Language)
+}

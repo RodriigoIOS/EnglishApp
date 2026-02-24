@@ -6,7 +6,9 @@
 //
 
 import UIKit
+import Combine
 
+@MainActor
 final class AppDIContainer {
     
     //Lembrar de colocar chave da API na constante abaixo -Anthropic
