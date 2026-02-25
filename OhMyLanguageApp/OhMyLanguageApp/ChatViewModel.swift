@@ -55,7 +55,7 @@ final class ChatViewModel {
                     language: selectedLanguage,
                     history: messages,
                     goals: goals,
-                    lessonMode: isLessonMode
+                    lessionMode: isLessonMode
                 )
                 messages.append(tutorMsg)
                 progress = trackProgUC.updateHistory(
@@ -63,7 +63,7 @@ final class ChatViewModel {
                     newAccuracy: newProg.grammarAccuracy,
                     newVocab: newProg.vocabularyCount
                 )
-                coordinatorDelegate.chatViewModel(self, didReceiveFeedback: feedback)
+                coordinatorDelegate?.chatViewModel(self, didReceiveFeedback: feedback)
             } catch {
                 errorMsg = error.localizedDescription
             }
@@ -86,7 +86,7 @@ final class ChatViewModel {
         messages = []
         translatedIDs = []
         errorMsg = nil
-        coordinatorDelegate.chatViewModelDidChangeLanguage(self, language: lang)
+        coordinatorDelegate?.chatViewModelDidChangeLanguage(self, language: lang)
     }
 }
 

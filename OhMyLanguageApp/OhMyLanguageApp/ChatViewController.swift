@@ -14,7 +14,7 @@ final class ChatViewController: UIViewController {
     
     private let viewModel: ChatViewModel
     private let goalsVM: GoalsViewModel
-    private let cancellables = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>()
     
     //MARK: - Root View
     private lazy var rootView = ChatView()
@@ -71,11 +71,11 @@ final class ChatViewController: UIViewController {
     @objc private func showLanguagePicker() {
         let ac = UIAlertController(title: "Escolha o idioma", message: nil, preferredStyle: .actionSheet)
         Language.all.forEach { lang in
-            ac.addAction(UIAction(title:"\(lang.flag) \(lang.name)", style: .default) { [weak self] _ in
+            ac.addAction(UIAlertAction(title:"\(lang.flag) \(lang.name)", style: .default) { [weak self] _ in
                 guard let self else { return }
                 self.viewModel.changeLanguage(lang)
                 self.goalsVM.loadGoals(for: lang)
-                self.rootView.inputView.placeholder = "Digite em \(lang.name)..."
+                self.rootView.chatInputView.placeholder = "Digite em \(lang.name)..."
             })
         }
         ac.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
@@ -84,7 +84,7 @@ final class ChatViewController: UIViewController {
     }
     
     @objc private func showPanel() {
-        let vc = PanelViewController(GoalsVM: goalsVM)
+        let vc = PanelViewController(goalsVM: goalsVM)
         let nav = UINavigationController(rootViewController: vc)
         if let sheet = nav.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
@@ -111,12 +111,12 @@ final class ChatViewController: UIViewController {
     
     // MARK: - Input Setup
     private func setupInput() {
-        rootView.inputView.placeholder = "Digite em \(viewModel.selectedLanguage.name)..."
-        rootView.inputView.onSend = { [weak self] in
+        rootView.chatInputView.placeholder = "Digite em \(viewModel.selectedLanguage.name)..."
+        rootView.chatInputView.onSend = { [weak self] in
             guard let self else { return }
-            let text = self.rootView.inputView.textView.text ?? ""
+            let text = self.rootView.chatInputView.textView.text ?? ""
             self.viewModel.sendMessage(text, goals: self.goalsVM.goals)
-            self.rootView.inputView.clearText()
+            self.rootView.chatInputView.clearText()
         }
     }
     
@@ -134,7 +134,7 @@ final class ChatViewController: UIViewController {
             .sink{ [weak self] loading in
                 self?.showTyping = loading
                 self?.rootView.collectionView.reloadData()
-                self?.rootView.inputView.sendButton.isEnabled = !loading
+                self?.rootView.chatInputView.sendButton.isEnabled = !loading
             }
             .store(in: &cancellables)
     }
@@ -142,7 +142,7 @@ final class ChatViewController: UIViewController {
     private func reloadAndScroll(msgs: [Message]) {
         rootView.collectionView.reloadData()
         guard !msgs.isEmpty else { return }
-        let lastIdx = IndexPath(item: msgs.count -1, section: 0)
+        let lastIdx = IndexPath(item: msgs.count - 1, section: 0)
         rootView.collectionView.scrollToItem(at: lastIdx, at: .bottom, animated: true)
     }
 }

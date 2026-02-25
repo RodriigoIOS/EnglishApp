@@ -23,7 +23,7 @@ final class ChatView: UIView, ViewCodeProtocol {
         return cv
     }()
     
-    let inputView = ChatInputView()
+    let chatInputView = ChatInputView()
     
     private var inputBottomConstraint: NSLayoutConstraint!
     
@@ -42,12 +42,12 @@ final class ChatView: UIView, ViewCodeProtocol {
     // MARK: - ViewCodeProtocol
     func setupHierarchy() {
         addSubview(collectionView)
-        addSubview(inputView)
+        addSubview(chatInputView)
     }
     
     func setupConstraints() {
         
-        inputBottomConstraint = input.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+        inputBottomConstraint = chatInputView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         
         collectionView.anchor(
             top: safeAreaLayoutGuide.topAnchor,
@@ -55,7 +55,7 @@ final class ChatView: UIView, ViewCodeProtocol {
             bottom: inputView?.topAnchor,
             trailing: trailingAnchor
         )
-        inputView.anchor(leading: leadingAnchor, trailing: trailingAnchor)
+        chatInputView.anchor(leading: leadingAnchor, trailing: trailingAnchor)
         inputBottomConstraint.isActive = true
     }
     

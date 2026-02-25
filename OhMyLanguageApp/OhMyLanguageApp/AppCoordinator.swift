@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Combine
 
-
+@MainActor
 final class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
     private let container: AppDIContainer
