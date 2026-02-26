@@ -13,7 +13,14 @@ final class AppDIContainer {
     
     //Lembrar de colocar chave da API na constante abaixo -Anthropic
     
-    private let apiKey = "Insert_Your_APIKEY"
+    private var apiKey: String {
+        guard let key = Bundle.main.infoDictionary?["AnthropicAPIKey"] as? String,
+              !key.isEmpty else {
+            fatalError("AnthropicAPIKey nao encontrada no info.plist")
+        }
+        
+        return key
+    }
     
     // MARK: - Services (using lazy singleton)
     
