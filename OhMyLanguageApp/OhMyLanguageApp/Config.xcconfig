@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  OhMyLanguageApp
+//
+//  Created by Rodrigo on 25/02/26.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+ANTHROPIC_API_KEY = YOUR_APIKEY
