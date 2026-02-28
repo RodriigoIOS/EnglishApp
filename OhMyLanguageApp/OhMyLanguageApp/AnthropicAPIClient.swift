@@ -11,15 +11,15 @@ import UIKit
 enum APIError: LocalizedError {
     case invalidURL
     case invalidResponse(statusCode: Int, body: String)
-    case DecodingError(String)
+    case decodingError(String)
     case networkError(Error)
     
     var errorDescription: String? {
         switch self {
         case .invalidURL: return "URL Inválida."
         case .invalidResponse(let c, let b): return "Erro \(c): \(b)"
-        case .DecodingError(let s): return "Falha ao decodificar: \(s)"
-        case.networkError(let e): return e.localizedDescription
+        case .decodingError(let s): return "Falha ao decodificar: \(s)"
+        case .networkError(let e): return e.localizedDescription
         }
     }
 }
@@ -28,34 +28,44 @@ protocol AnthropicAPIClientProtocol {
     func complete(system: String, userMessages: [MessageDTO]) async throws -> String
 }
 
+// MARK: - Data/Network/GeminiAPIClient.swift
+
+import Foundation
+
 final class AnthropicAPIClient: AnthropicAPIClientProtocol {
     private let apiKey: String
-    private let model: String
     private let session: URLSession
-    
-    private let baseURL = "https://api.anthropic.com/v1/messages"
-    private let apiVersion = "2023-06-01"
-    
-    init(apiKey: String,
-         model: String = "claude-sonnet-4-20250514",
-         session: URLSession = .shared) {
+    private let baseURL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+
+    init(apiKey: String, model: String = "", session: URLSession = .shared) {
         self.apiKey = apiKey
-        self.model = model
         self.session = session
     }
-    
+
     func complete(system: String, userMessages: [MessageDTO]) async throws -> String {
-        guard let url = URL(string: baseURL) else { throw APIError.invalidURL}
-        
+        // Monta o prompt combinando system + mensagem do usuário
+        let fullPrompt = system + "\n\n" + (userMessages.last?.content ?? "")
+
+        guard let url = URL(string: "\(baseURL)?key=\(apiKey)") else {
+            throw APIError.invalidURL
+        }
+
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue(apiKey, forHTTPHeaderField: "x-api-key")
-        request.setValue(apiVersion, forHTTPHeaderField: "anthropic-version")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let body = AnthropicRequest(model: model, maxTokens: 1024, messages: userMessages, system: system)
-        request.httpBody = try JSONEncoder().encode(body)
-        
+
+        let body: [String: Any] = [
+            "contents": [
+                ["parts": [["text": fullPrompt]]]
+            ],
+            "generationConfig": [
+                "maxOutputTokens": 1024,
+                "temperature": 0.7
+            ]
+        ]
+
+        request.httpBody = try JSONSerialization.data(withJSONObject: body)
+
         do {
             let (data, response) = try await session.data(for: request)
             guard let http = response as? HTTPURLResponse else {
@@ -65,13 +75,22 @@ final class AnthropicAPIClient: AnthropicAPIClientProtocol {
                 let body = String(data: data, encoding: .utf8) ?? ""
                 throw APIError.invalidResponse(statusCode: http.statusCode, body: body)
             }
-            
-            let decoded = try JSONDecoder().decode(AnthropicResponse.self, from: data)
-            return decoded.textContent
+
+            // Parse resposta do Gemini
+            guard let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                  let candidates = json["candidates"] as? [[String: Any]],
+                  let first = candidates.first,
+                  let content = first["content"] as? [String: Any],
+                  let parts = content["parts"] as? [[String: Any]],
+                  let text = parts.first?["text"] as? String
+            else {
+                throw APIError.decodingError("Formato de resposta inesperado do Gemini")
+            }
+
+            return text
+
         } catch let error as APIError {
             throw error
-        } catch let error as DecodingError {
-            throw APIError.DecodingError(error.localizedDescription)
         } catch {
             throw APIError.networkError(error)
         }

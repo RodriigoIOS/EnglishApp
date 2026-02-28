@@ -35,7 +35,6 @@
 		5BB04FF92F4D65410006AF8D /* GoalsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB04FF82F4D65410006AF8D /* GoalsRepository.swift */; };
 		5BB93A7C2F494B8F00EA4482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB93A7B2F494B8F00EA4482 /* AppDelegate.swift */; };
 		5BB93A7E2F494B8F00EA4482 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB93A7D2F494B8F00EA4482 /* SceneDelegate.swift */; };
-		5BB93A802F494B8F00EA4482 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB93A7F2F494B8F00EA4482 /* ViewController.swift */; };
 		5BB93A862F494B8F00EA4482 /* OhMyLanguageApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BB93A842F494B8F00EA4482 /* OhMyLanguageApp.xcdatamodeld */; };
 		5BB93A882F494B9100EA4482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BB93A872F494B9100EA4482 /* Assets.xcassets */; };
 		5BB93A8B2F494B9100EA4482 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB93A892F494B9100EA4482 /* LaunchScreen.storyboard */; };
@@ -101,7 +100,6 @@
 		5BB93A782F494B8F00EA4482 /* OhMyLanguageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OhMyLanguageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB93A7B2F494B8F00EA4482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BB93A7D2F494B8F00EA4482 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5BB93A7F2F494B8F00EA4482 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5BB93A852F494B8F00EA4482 /* OhMyLanguageApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OhMyLanguageApp.xcdatamodel; sourceTree = "<group>"; };
 		5BB93A872F494B9100EA4482 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BB93A8A2F494B9100EA4482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 				5B9C9EB82F4A83DE002443CC /* FeedbackViewModel.swift */,
 				5B9C9EBA2F4A846A002443CC /* StatsViewModel.swift */,
 				5B9C9EBC2F4A8506002443CC /* ChatView.swift */,
-				5BB93A7F2F494B8F00EA4482 /* ViewController.swift */,
 				5BB93A872F494B9100EA4482 /* Assets.xcassets */,
 				5BB93A892F494B9100EA4482 /* LaunchScreen.storyboard */,
 				5BB93A8C2F494B9100EA4482 /* Info.plist */,
@@ -381,7 +378,6 @@
 				5BB04FE72F4C96870006AF8D /* ChatRepositoryProtocol.swift in Sources */,
 				5BB04FF12F4D59AB0006AF8D /* MessageRequestDTO.swift in Sources */,
 				5BB93AB12F494C7A00EA4482 /* AppCoordinator.swift in Sources */,
-				5BB93A802F494B8F00EA4482 /* ViewController.swift in Sources */,
 				5BB93ABD2F495A2000EA4482 /* UIFont+App.swift in Sources */,
 				5BB93AB32F494D3F00EA4482 /* ChatCoordinator.swift in Sources */,
 				5B82B8CE2F4C046000BC91B3 /* PanelViewController.swift in Sources */,

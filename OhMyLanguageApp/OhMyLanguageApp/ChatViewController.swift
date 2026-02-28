@@ -123,20 +123,37 @@ final class ChatViewController: UIViewController {
     // MARK: - Bindings (combine)
     private func bindViewModel() {
         viewModel.$messages
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] msgs in
-                self?.reloadAndScroll(msgs: msgs)
-            }
-            .store(in: &cancellables)
-        
-        viewModel.$isLoading
-            .receive(on: DispatchQueue.main)
-            .sink{ [weak self] loading in
-                self?.showTyping = loading
-                self?.rootView.collectionView.reloadData()
-                self?.rootView.chatInputView.sendButton.isEnabled = !loading
-            }
-            .store(in: &cancellables)
+                .receive(on: DispatchQueue.main)
+                .sink { [weak self] msgs in
+                    guard let self else { return }
+                    self.rootView.collectionView.reloadData()
+                    guard !msgs.isEmpty else { return }
+                    let lastIdx = IndexPath(item: msgs.count - 1, section: 0)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        self.rootView.collectionView.scrollToItem(at: lastIdx, at: .bottom, animated: true)
+                    }
+                }
+                .store(in: &cancellables)
+
+            viewModel.$isLoading
+                .receive(on: DispatchQueue.main)
+                .sink { [weak self] loading in
+                    guard let self else { return }
+                    self.showTyping = loading
+                    self.rootView.collectionView.reloadData()
+                    self.rootView.chatInputView.sendButton.isEnabled = !loading
+                }
+                .store(in: &cancellables)
+
+            viewModel.$errorMsg
+                .receive(on: DispatchQueue.main)
+                .compactMap { $0 }
+                .sink { [weak self] msg in
+                    let ac = UIAlertController(title: "Erro", message: msg, preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    self?.present(ac, animated: true)
+                }
+                .store(in: &cancellables)
     }
     
     private func reloadAndScroll(msgs: [Message]) {
@@ -150,11 +167,15 @@ final class ChatViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension ChatViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.messages.count + (showTyping ? 1 : 0)
+        let count = viewModel.messages.count + (showTyping ? 1 : 0)
+        print("🔢 numberOfItems: \(count)")
+        
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Typing indicator (Ultima celula durante loading)
+        print("🟡 Renderizando célula \(indexPath.item) — total: \(viewModel.messages.count)")
         if showTyping && indexPath.item == viewModel.messages.count {
             return collectionView.dequeueReusableCell(withReuseIdentifier: TypingIndicatorCell.reuseID, for: indexPath)
         }

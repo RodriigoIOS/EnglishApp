@@ -13,6 +13,7 @@ final class AppDIContainer {
     
     //Lembrar de colocar chave da API na constante abaixo -Anthropic
     
+
     private var apiKey: String {
         guard let key = Bundle.main.infoDictionary?["AnthropicAPIKey"] as? String,
               !key.isEmpty else {
