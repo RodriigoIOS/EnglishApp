@@ -147,12 +147,223 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B386CC32F53DF8300E72987 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5BB93AB02F494C7A00EA4482 /* AppCoordinator.swift */,
+				5BB93A7D2F494B8F00EA4482 /* SceneDelegate.swift */,
+				5BB93A7B2F494B8F00EA4482 /* AppDelegate.swift */,
+				5BB93AB42F494F9C00EA4482 /* AppDIContainer.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5B386CC62F53E00500E72987 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5B386CD32F53E40D00E72987 /* Progress */,
+				5B386CD22F53E40300E72987 /* Goals */,
+				5B386CD12F53E3FC00E72987 /* Chat */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5B386CC72F53E05C00E72987 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5B386CD02F53E30000E72987 /* UI */,
+				5B386CCD2F53E12600E72987 /* Common */,
+				5B386CCC2F53E10400E72987 /* Network */,
+				5B386CCE2F53E13400E72987 /* Entities */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5B386CCC2F53E10400E72987 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5B386CCD2F53E12600E72987 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5BB93AAE2F494C0B00EA4482 /* Coordinator.swift */,
+				5BB93AB62F49548A00EA4482 /* ViewCodeProtocol.swift */,
+				5BB93ABE2F495AA400EA4482 /* AppConstants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5B386CCE2F53E13400E72987 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		5B386CD02F53E30000E72987 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5BB93ABA2F49595800EA4482 /* UIColor+Theme.swift */,
+				5BB93ABC2F495A2000EA4482 /* UIFont+App.swift */,
+				5BB93AB82F49554F00EA4482 /* UIView+Constraints.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5B386CD12F53E3FC00E72987 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				5B386CD72F53E43500E72987 /* Coordinator */,
+				5B386CD42F53E41E00E72987 /* Domain */,
+				5B386CD62F53E42C00E72987 /* Presentation */,
+				5B386CD52F53E42600E72987 /* Data */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		5B386CD22F53E40300E72987 /* Goals */ = {
+			isa = PBXGroup;
+			children = (
+				5B386CDB2F53E52600E72987 /* Coordinator */,
+				5B386CDA2F53E51F00E72987 /* Presentation */,
+				5B386CD92F53E51900E72987 /* Data */,
+				5B386CD82F53E51400E72987 /* Domain */,
+			);
+			path = Goals;
+			sourceTree = "<group>";
+		};
+		5B386CD32F53E40D00E72987 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				5B386CDD2F53E60D00E72987 /* Presentation */,
+				5B386CDC2F53E5FB00E72987 /* Domain */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		5B386CD42F53E41E00E72987 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5BB04FE62F4C96870006AF8D /* ChatRepositoryProtocol.swift */,
+				5BB04FDC2F4C83040006AF8D /* Message.swift */,
+				5BB04FEA2F4D52FB0006AF8D /* SendMessagesUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5B386CD52F53E42600E72987 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5BB04FF22F4D5A420006AF8D /* MessageResponseDTO.swift */,
+				5BB04FF02F4D59AB0006AF8D /* MessageRequestDTO.swift */,
+				5BB04FF42F4D5AF60006AF8D /* AnthropicAPIClient.swift */,
+				5BB04FF62F4D5F510006AF8D /* ChatRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5B386CD62F53E42C00E72987 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5B82B8C32F4BC04700BC91B3 /* MessageCell.swift */,
+				5B82B8C12F4B65DA00BC91B3 /* ChatInputView.swift */,
+				5B82B8C72F4BDDBD00BC91B3 /* ChatViewController.swift */,
+				5BB93AC02F495BC400EA4482 /* ChatViewModel.swift */,
+				5B9C9EBC2F4A8506002443CC /* ChatView.swift */,
+				5B82B8C52F4BCD4B00BC91B3 /* TypingIndicatorCell.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5B386CD72F53E43500E72987 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5BB93AB22F494D3F00EA4482 /* ChatCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5B386CD82F53E51400E72987 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5BB04FE02F4C8DA40006AF8D /* LearningGoal.swift */,
+				5BB04FE82F4C97370006AF8D /* GoalsRepositoryProtocol.swift */,
+				5BB04FEC2F4D559C0006AF8D /* ManageGoalsUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5B386CD92F53E51900E72987 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5BB04FF82F4D65410006AF8D /* GoalsRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5B386CDA2F53E51F00E72987 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5B82B8CB2F4BF44A00BC91B3 /* GoalCell.swift */,
+				5B9C9EB62F4A8171002443CC /* GoalsViewModel.swift */,
+				5B82B8C92F4BF2E500BC91B3 /* GoalsViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5B386CDB2F53E52600E72987 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5B386CDC2F53E5FB00E72987 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5BB04FE42F4C93820006AF8D /* UserProgress.swift */,
+				5BB04FEE2F4D578B0006AF8D /* TrackProgressUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5B386CDD2F53E60D00E72987 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5B9C9EB82F4A83DE002443CC /* FeedbackViewModel.swift */,
+				5B9C9EBA2F4A846A002443CC /* StatsViewModel.swift */,
+				5B82B8CD2F4C046000BC91B3 /* PanelViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5B386CDE2F53E72B00E72987 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5BB93A892F494B9100EA4482 /* LaunchScreen.storyboard */,
+				5BB93A872F494B9100EA4482 /* Assets.xcassets */,
+				5BB93A842F494B8F00EA4482 /* OhMyLanguageApp.xcdatamodeld */,
+				5BD4224F2F4FEB98000E8A67 /* Config.xcconfig */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5B386CDF2F53E74B00E72987 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5BB93A942F494B9200EA4482 /* OhMyLanguageAppTests */,
+				5BB93A9E2F494B9200EA4482 /* OhMyLanguageAppUITests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		5BB93A6F2F494B8F00EA4482 = {
 			isa = PBXGroup;
 			children = (
 				5BB93A7A2F494B8F00EA4482 /* OhMyLanguageApp */,
-				5BB93A942F494B9200EA4482 /* OhMyLanguageAppTests */,
-				5BB93A9E2F494B9200EA4482 /* OhMyLanguageAppUITests */,
 				5BB93A792F494B8F00EA4482 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -170,49 +381,14 @@
 		5BB93A7A2F494B8F00EA4482 /* OhMyLanguageApp */ = {
 			isa = PBXGroup;
 			children = (
-				5BB93A7B2F494B8F00EA4482 /* AppDelegate.swift */,
-				5BB93A7D2F494B8F00EA4482 /* SceneDelegate.swift */,
-				5BB93AB62F49548A00EA4482 /* ViewCodeProtocol.swift */,
-				5BB93AB82F49554F00EA4482 /* UIView+Constraints.swift */,
-				5BD4224F2F4FEB98000E8A67 /* Config.xcconfig */,
-				5B82B8C12F4B65DA00BC91B3 /* ChatInputView.swift */,
-				5B82B8C32F4BC04700BC91B3 /* MessageCell.swift */,
-				5BB04FF82F4D65410006AF8D /* GoalsRepository.swift */,
-				5BB04FF62F4D5F510006AF8D /* ChatRepository.swift */,
-				5BB04FEE2F4D578B0006AF8D /* TrackProgressUseCase.swift */,
-				5BB04FF02F4D59AB0006AF8D /* MessageRequestDTO.swift */,
-				5BB04FF22F4D5A420006AF8D /* MessageResponseDTO.swift */,
-				5BB04FF42F4D5AF60006AF8D /* AnthropicAPIClient.swift */,
-				5B82B8C52F4BCD4B00BC91B3 /* TypingIndicatorCell.swift */,
-				5B82B8C72F4BDDBD00BC91B3 /* ChatViewController.swift */,
-				5B82B8C92F4BF2E500BC91B3 /* GoalsViewController.swift */,
-				5B82B8CD2F4C046000BC91B3 /* PanelViewController.swift */,
-				5BB04FDC2F4C83040006AF8D /* Message.swift */,
-				5BB04FDE2F4C86910006AF8D /* Language.swift */,
-				5BB04FE02F4C8DA40006AF8D /* LearningGoal.swift */,
-				5BB04FE22F4C8E210006AF8D /* Feedback.swift */,
-				5BB04FE42F4C93820006AF8D /* UserProgress.swift */,
-				5BB04FE62F4C96870006AF8D /* ChatRepositoryProtocol.swift */,
-				5BB04FE82F4C97370006AF8D /* GoalsRepositoryProtocol.swift */,
-				5BB04FEA2F4D52FB0006AF8D /* SendMessagesUseCase.swift */,
-				5BB04FEC2F4D559C0006AF8D /* ManageGoalsUseCase.swift */,
-				5B82B8CB2F4BF44A00BC91B3 /* GoalCell.swift */,
-				5BB93ABA2F49595800EA4482 /* UIColor+Theme.swift */,
-				5BB93ABC2F495A2000EA4482 /* UIFont+App.swift */,
-				5BB93ABE2F495AA400EA4482 /* AppConstants.swift */,
-				5BB93AC02F495BC400EA4482 /* ChatViewModel.swift */,
-				5B9C9EB62F4A8171002443CC /* GoalsViewModel.swift */,
-				5B9C9EB82F4A83DE002443CC /* FeedbackViewModel.swift */,
-				5B9C9EBA2F4A846A002443CC /* StatsViewModel.swift */,
-				5B9C9EBC2F4A8506002443CC /* ChatView.swift */,
-				5BB93A872F494B9100EA4482 /* Assets.xcassets */,
-				5BB93A892F494B9100EA4482 /* LaunchScreen.storyboard */,
+				5B386CC32F53DF8300E72987 /* App */,
+				5B386CC72F53E05C00E72987 /* Core */,
+				5B386CC62F53E00500E72987 /* Modules */,
+				5B386CDE2F53E72B00E72987 /* Resources */,
+				5B386CDF2F53E74B00E72987 /* Tests */,
 				5BB93A8C2F494B9100EA4482 /* Info.plist */,
-				5BB93A842F494B8F00EA4482 /* OhMyLanguageApp.xcdatamodeld */,
-				5BB93AAE2F494C0B00EA4482 /* Coordinator.swift */,
-				5BB93AB02F494C7A00EA4482 /* AppCoordinator.swift */,
-				5BB93AB22F494D3F00EA4482 /* ChatCoordinator.swift */,
-				5BB93AB42F494F9C00EA4482 /* AppDIContainer.swift */,
+				5BB04FE22F4C8E210006AF8D /* Feedback.swift */,
+				5BB04FDE2F4C86910006AF8D /* Language.swift */,
 			);
 			path = OhMyLanguageApp;
 			sourceTree = "<group>";
