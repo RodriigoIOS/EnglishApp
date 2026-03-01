@@ -8,4 +8,5 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-ANTHROPIC_API_KEY = YOUR_APIKEY
+ANTHROPIC_API_KEY = AIzaSyAu3AcotmccbI6MUSFoqjv_1P8f17vcYG0
+

@@ -14,7 +14,8 @@ final class ChatView: UIView, ViewCodeProtocol {
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width, height: 60)
+        layout.minimumLineSpacing = 4
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .appBackground
         cv.keyboardDismissMode = .interactive
@@ -46,17 +47,25 @@ final class ChatView: UIView, ViewCodeProtocol {
     }
     
     func setupConstraints() {
-        
-        inputBottomConstraint = chatInputView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
-        
-        collectionView.anchor(
-            top: safeAreaLayoutGuide.topAnchor,
-            leading: leadingAnchor,
-            bottom: inputView?.topAnchor,
-            trailing: trailingAnchor
+        chatInputView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+
+        inputBottomConstraint = chatInputView.bottomAnchor.constraint(
+            equalTo: safeAreaLayoutGuide.bottomAnchor
         )
-        chatInputView.anchor(leading: leadingAnchor, trailing: trailingAnchor)
-        inputBottomConstraint.isActive = true
+
+        NSLayoutConstraint.activate([
+            // CollectionView ocupa tudo acima do input
+            collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: chatInputView.topAnchor),
+
+            // Input bar na parte inferior
+            chatInputView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            chatInputView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            inputBottomConstraint,
+        ])
     }
     
     func setupStyle() {
